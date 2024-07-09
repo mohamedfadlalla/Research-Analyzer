@@ -1,9 +1,3 @@
-# Research-Analyzer
-
-Perfect. Here's a draft for your README file based on the information you've provided:
-
----
-
 # Research-analyzer
 
 ## Description
@@ -43,7 +37,3 @@ If you want to contribute to this project, please contact me at mohamedbadrelmaa
 
 ## Feedback
 For any issues or feedback, please raise an issue in the GitHub repository.
-
----
-
-Feel free to edit or add any details as needed!
