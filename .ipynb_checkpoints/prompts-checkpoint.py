@@ -34,62 +34,7 @@ Your job is to write Python code that:
 3. Adds nodes to the graph with appropriate labels.
 4. Adds edges between the nodes with descriptions of their relationships.
 5. Sets aesthetic properties such as layout direction, size, shape, or other visual attributes.
-6. Make sure that the graph is compact
-7. Very important to render the graph and display it within Jupyter notebook. 
+7. Very important to output the results to pdf file name "graph" 
 
-## Example output:
-from graphviz import Digraph
-
-# Create a new graph
-dot = Digraph(comment='Drug-Pocket Analysis Workflow')
-
-# Define nodes
-nodes = [
-    "Drug and Protein Complex Preparation",
-    "Pocket Identification",
-    "Covid-19 Pockets Preparation",
-    "Pocket Comparison",
-    "Docking Calculation",
-    "Steroidal Pocket Analysis"
-]
-
-# Define edges and their descriptions
-edges = [
-    ("Drug and Protein Complex Preparation", "Pocket Identification", "Preparation for pocket identification"),
-    ("Pocket Identification", "Pocket Comparison", "Input for comparison"),
-    ("Covid-19 Pockets Preparation", "Pocket Comparison", "Input for comparison"),
-    ("Pocket Comparison", "Docking Calculation", "Selection for docking"),
-    ("Docking Calculation", "Steroidal Pocket Analysis", "Analysis of docking results")
-]
-
-# Add nodes to the graph
-for node in nodes:
-    dot.node(node, node)
-
-# Add edges to the graph
-for source, target, description in edges:
-    dot.edge(source, target, label=description)
-
-# Set graph attributes to make it more squared
-dot.attr(rankdir='BT')  # Set layout direction to bottom-to-top
-
-# Define ranks to arrange nodes in a more squared layout
-with dot.subgraph() as s:
-    s.attr(rank='same')
-    s.node("Drug and Protein Complex Preparation")
-    s.node("Covid-19 Pockets Preparation")
-
-with dot.subgraph() as s:
-    s.attr(rank='same')
-    s.node("Pocket Identification")
-    s.node("Pocket Comparison")
-
-with dot.subgraph() as s:
-    s.attr(rank='same')
-    s.node("Docking Calculation")
-    s.node("Steroidal Pocket Analysis")
-
-# Render the graph
-dot
 """
 
