@@ -1,6 +1,6 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
-
+import os 
 from prompts import system_prompt_1, system_prompt_2
 from input import method_1, method_2
 import re
@@ -11,12 +11,13 @@ from dotenv import load_dotenv
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", google_api_key=GOOGLE_API_KEY, temperature=0, convert_system_message_to_human=True)
+gem1 = ChatGoogleGenerativeAI(model="gemini-1.5-pro", google_api_key=GOOGLE_API_KEY, temperature=0.4, convert_system_message_to_human=True)
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro", google_api_key=GOOGLE_API_KEY, temperature=0.3, convert_system_message_to_human=True)
 
 def create_nodes_and_edges(method):
     create_nodes = ChatPromptTemplate.from_messages([("system", system_prompt_1,),
                                                ("human", method),])
-    chain = create_nodes | llm
+    chain = create_nodes | gem1
     response = chain.invoke({}).content
     return response
 
