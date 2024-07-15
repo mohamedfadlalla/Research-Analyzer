@@ -16,36 +16,32 @@ def main():
         if method_text:
             with st.spinner("Processing..."):
                 # Create nodes and edges
-                nande = create_nodes_and_edges()
+                nande = create_nodes_and_edges(method_text)
 
                 # Generate Graphviz code
-                llm_response = generate_graphviz_code(nande.content)
+                llm_response = generate_graphviz_code(nande)
 
                 # Extract and execute the code
-                code = extract_code(llm_response.content)
+                code = extract_code(llm_response)
                 
-                                # Display debug information if debug mode is on
+                # Display debug information if debug mode is on
                 if debug_mode:
                     st.subheader("Debug Information")
                     st.text("Nodes and Edges Content:")
-                    st.code(nande.content)
+                    st.code(nande)
                     st.text("LLM Response Content:")
-                    st.code(llm_response.content)
+                    st.code(llm_response)
 
                 
                 # Execute the code
                 exec(code)
                 
-                # Look for the graph.pdf file
-                if os.path.exists("graph.pdf"):
-                    # Display the PDF
-                    with open("graph.pdf", "rb") as f:
-                        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-                    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
-                    st.markdown(pdf_display, unsafe_allow_html=True)
+                # Look for the graph.png file
+                if os.path.exists("graph.png"):
+                    # Display the PNG image
+                    st.image("graph.png", caption="Generated Graph", use_column_width=True)
                 else:
-                    st.error("Unable to find the generated graph.pdf file.")
-
+                    st.error("Unable to find the generated graph.png file.")
 
         else:
             st.warning("Please enter the method section text.")

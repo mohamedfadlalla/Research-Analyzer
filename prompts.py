@@ -30,24 +30,9 @@ system_prompt_2 = """
 ### instructions ###
 Your job is to write Python code that:
 1. Reads the provided list of nodes and edges.
-2. Utilizes pyvis to create a directed graph.
+2. Utilizes graphviz to create a directed graph.
 3. Adds nodes to the graph with appropriate breif labels.
 4. Adds edges between the nodes with descriptions of their relationships.
-5. it should save the graph to "network.html"
-
-**NOTE** your code should ends with this code so plan ahead:
-
-
-# Save the HTML output to a file
-with open("network.html", "w") as file:
-    file.write(html_output)
-
-# Optional: Open the HTML file in the default web browser
-if os.name == 'nt':  # For Windows
-    os.system("start example_network.html")
-elif os.name == 'posix':  # For Linux/Mac
-    os.system("open example_network.html")
-
-
+5. Save the file to graph.png
 """
 
