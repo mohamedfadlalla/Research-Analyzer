@@ -1,6 +1,5 @@
 import streamlit as st
 import os
-import base64
 from functions import create_nodes_and_edges, generate_graphviz_code, extract_code
 
 def main():
@@ -24,7 +23,6 @@ def main():
                 # Extract and execute the code
                 code = extract_code(llm_response.content)
                 
-                                # Display debug information if debug mode is on
                 if debug_mode:
                     st.subheader("Debug Information")
                     st.text("Nodes and Edges Content:")
@@ -36,15 +34,16 @@ def main():
                 # Execute the code
                 exec(code)
                 
-                # Look for the graph.pdf file
-                if os.path.exists("graph.pdf"):
-                    # Display the PDF
-                    with open("graph.pdf", "rb") as f:
-                        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-                    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
-                    st.markdown(pdf_display, unsafe_allow_html=True)
+                # Look for the network.html file
+                if os.path.exists("network.html"):
+                    # Display the HTML
+                    with open("network.html", "r", encoding="utf-8") as f:
+                        html_content = f.read()
+                    st.components.v1.html(html_content, width=700, height=1000)
                 else:
-                    st.error("Unable to find the generated graph.pdf file.")
+                    st.error("Unable to find the generated network.html file.")
+
+                # Display debug information if debug mode is on
 
 
         else:

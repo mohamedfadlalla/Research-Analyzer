@@ -5,8 +5,7 @@ from prompts import system_prompt_1, system_prompt_2
 from input import method_1, method_2
 import re
 
-GROQ_API_KEY = "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"
-
+GROQ_API_KEY = "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"
 def create_chat_groq(model_name, max_tokens=1024):
     return ChatGroq(
         temperature=0,
@@ -36,7 +35,7 @@ def create_nodes_and_edges():
     return invoke_chain(chain)
 
 def generate_graphviz_code(nande_content):
-    chat = create_chat_groq("gemma2-9b-it")
+    chat = create_chat_groq("mixtral-8x7b-32768")
     chain = create_chain(chat, system_prompt_2, nande_content)
     return invoke_chain(chain)
 

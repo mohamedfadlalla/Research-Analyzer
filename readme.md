@@ -3,6 +3,10 @@
 ## Description
 Research-analyzer is a set of Jupyter notebooks designed to help researchers analyze papers using AI. The main feature currently available is the generation of a workflow from the method section of research papers.
 
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohamedfadlalla/Research-Analyzer/blob/main/Research_Analyser.ipynb)
+
+
 ## Features
 - **Workflow Generation**: Extracts the method section of a paper and generates a workflow that the author used to conduct the research.
 - **Planned Features**:
