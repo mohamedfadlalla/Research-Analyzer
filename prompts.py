@@ -1,5 +1,9 @@
 # prompts.py
 
+get_markdown = """
+You are a markdown converter, you will be provided with a text and your job is to convert it to markdown
+"""
+
 system_prompt_1 = """
 Given a detailed method section from a research paper, your task is to identify and list out the main steps (nodes) and their dependencies (edges). Read through the method section carefully and:
 - Identify key activities or processes described in each paragraph or significant sentence.

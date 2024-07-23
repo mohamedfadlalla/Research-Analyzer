@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import base64
-from functions import create_nodes_and_edges, generate_graphviz_code, extract_code
+from functions import create_nodes_and_edges, generate_graphviz_code, extract_code, toMarkdown
 
 def main():
     st.title("Scientific Paper Method Visualizer")
@@ -16,7 +16,9 @@ def main():
         if method_text:
             with st.spinner("Processing..."):
                 # Create nodes and edges
-                nande = create_nodes_and_edges(method_text)
+                method = toMarkdown(method_text)
+
+                nande = create_nodes_and_edges(method)
 
                 # Generate Graphviz code
                 llm_response = generate_graphviz_code(nande)
