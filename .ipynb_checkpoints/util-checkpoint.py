@@ -47,3 +47,55 @@ def extract_section(file_path, section_title):
                 section_content.append(line)
 
     return ''.join(section_content)
+
+
+from markdown_it import MarkdownIt
+import pandas as pd
+
+def split_into_sections_from_file(file_path):
+    # Read the file content
+    with open(file_path, 'r', encoding='utf-8') as file:
+        md_text = file.read()
+    
+    md = MarkdownIt()
+    tokens = md.parse(md_text)
+    
+    sections = []
+    current_section = {'title': None, 'content': ''}
+    
+    for i, token in enumerate(tokens):
+        if token.type == 'heading_open':
+            if current_section['title'] or current_section['content']:
+                sections.append(current_section)
+            level = int(token.tag[1])  # Get the heading level (e.g., 1 for h1, 2 for h2, etc.)
+            title = next(tokens[i + 1].content for t in tokens if t.type == 'inline')
+            current_section = {'title': f'{"#"*level} {title}', 'content': ''}
+        elif token.type == 'inline' and token.content:
+            current_section['content'] += token.content + '\n'
+        elif token.type not in ('heading_close'):
+            current_section['content'] += token.markup + '\n'
+    
+    if current_section['title'] or current_section['content']:
+        sections.append(current_section)
+    
+    return sections
+
+def create_dataframe_from_sections(file_path):
+    sections = split_into_sections_from_file(file_path)
+    df = pd.DataFrame(sections, columns=['title', 'content'])
+    return df
+
+def generate_summary(content):
+    system = """
+###instructions###
+You are a sammarizer you job is to sammarize any input into a structured markdown sammary that is comberhencive.
+
+## don't include a conclusion section
+
+"""
+
+    prompt = ChatPromptTemplate.from_messages([("system", system), ("human", content)])
+    
+    chain = prompt | llm
+    response = chain.invoke({})
+    return response.content

@@ -84,3 +84,18 @@ def create_dataframe_from_sections(file_path):
     sections = split_into_sections_from_file(file_path)
     df = pd.DataFrame(sections, columns=['title', 'content'])
     return df
+
+def generate_summary(content):
+    system = """
+###instructions###
+You are a sammarizer you job is to sammarize any input into a structured markdown sammary that is comberhencive.
+
+## don't include a conclusion section
+
+"""
+
+    prompt = ChatPromptTemplate.from_messages([("system", system), ("human", content)])
+    
+    chain = prompt | llm
+    response = chain.invoke({})
+    return response.content
