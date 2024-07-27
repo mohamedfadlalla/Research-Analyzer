@@ -1,4 +1,28 @@
-# prompts.py
+from langchain.prompts import PromptTemplate
+
+get_section = PromptTemplate.from_template("""
+###instructions###
+You will receive an outline of a scientific paper in the format shown in the expected input. Extract and present only the highest level heading corresponding to the {section} section, with no other output.
+
+
+###Example###
+Extract the method section
+**Expected Input:**
+#abstract
+#introduction
+#method
+##method 1
+#results
+#conclusion
+
+**Expected Output:**
+#method
+
+###Input###
+{text}
+
+###Output###
+""")
 
 system_prompt_1 = """
 Given a detailed method section from a research paper, your task is to identify and list out the main steps (nodes) and their dependencies (edges). Read through the method section carefully and:
@@ -30,11 +54,9 @@ system_prompt_2 = """
 ### instructions ###
 Your job is to write Python code that:
 1. Reads the provided list of nodes and edges.
-2. Utilizes Graphviz to create a directed graph.
-3. Adds nodes to the graph with appropriate labels.
+2. Utilizes graphviz to create a directed graph.
+3. Adds nodes to the graph with appropriate breif labels.
 4. Adds edges between the nodes with descriptions of their relationships.
-5. Sets aesthetic properties such as layout direction, size, shape, or other visual attributes.
-7. Very important to output the results to pdf file name "graph" 
-
+5. Save the file to graph.png
 """
 

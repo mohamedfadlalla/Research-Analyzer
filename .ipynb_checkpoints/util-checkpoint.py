@@ -29,7 +29,7 @@ def extract_section(file_path, section_title):
     inside_section = False
     section_level = None
 
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         for line in file:
             header_match = re.match(r'^(#+)\s+(.*)', line)
             if header_match:
