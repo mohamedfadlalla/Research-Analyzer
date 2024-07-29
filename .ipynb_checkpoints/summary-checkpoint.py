@@ -52,11 +52,16 @@ your *job* is to  {job}
 ###Output###
 """)
 
+def get_target_outline(section, outline, llm):
+    chain = get_section | llm
+    response = chain.invoke({'section':section,'text':outline})
+    return response.content
+
 def summarize(file_path, llm):
     summary_prompts = pd.read_csv('summary_prompts.csv')
     outline = util.print_outline(file_path)
     
-    def get_target_outline(section, outline):
+    def get_target_outline(section, outline, llm):
         chain = get_section | llm
         response = chain.invoke({'section':section,'text':outline})
         return response.content

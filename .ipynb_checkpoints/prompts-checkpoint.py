@@ -1,28 +1,9 @@
 from langchain.prompts import PromptTemplate
 
-get_section = PromptTemplate.from_template("""
+get_markdown = """
 ###instructions###
-You will receive an outline of a scientific paper in the format shown in the expected input. Extract and present only the highest level heading corresponding to the {section} section, with no other output.
-
-
-###Example###
-Extract the method section
-**Expected Input:**
-#abstract
-#introduction
-#method
-##method 1
-#results
-#conclusion
-
-**Expected Output:**
-#method
-
-###Input###
-{text}
-
-###Output###
-""")
+you are a markdown creator, you will be provide with a text, you job is to turn it into markdown:
+"""
 
 system_prompt_1 = """
 Given a detailed method section from a research paper, your task is to identify and list out the main steps (nodes) and their dependencies (edges). Read through the method section carefully and:

@@ -1,6 +1,9 @@
 from langchain.prompts import PromptTemplate
 
-
+get_markdown = """
+###instructions###
+you are a markdown creator, you will be provide with a text, you job is to turn it into markdown:
+"""
 
 system_prompt_1 = """
 Given a detailed method section from a research paper, your task is to identify and list out the main steps (nodes) and their dependencies (edges). Read through the method section carefully and:

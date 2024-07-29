@@ -1,7 +1,5 @@
 import re
 
-def get_llm()
-
 def extract_outline(file_path):
     outline = []
     with open(file_path, 'r', encoding='utf-8') as file:
