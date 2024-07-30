@@ -93,12 +93,13 @@ def summarize(file_path, llm):
             section = row['Typical Section']
             job = row['Description']
             Information = row['Information']
-            section_title = get_target_outline(section, outline)
+            section_title = get_target_outline(section, outline, llm)
             content = util.extract_section(file_path, section_title)
             chain = master | llm
             response = chain.invoke({'section':section,'text':content, 'job':job})
             results += f"\n## {Information}\n"
             results += response.content
+            break
 
     
     
