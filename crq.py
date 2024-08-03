@@ -28,7 +28,7 @@ You will be provided with the method section and the abstract of my study. Your 
 
 
 def Critique(file_path, llm):
-    summary_prompts = pd.read_csv('Critique_prompts.csv')
+    summary_prompts = pd.read_csv('Critique_prompts.csv', encoding='latin1')
     outline = util.print_outline(file_path)
     
     def get_target_outline(section, outline, llm):
@@ -54,6 +54,7 @@ def Critique(file_path, llm):
                                  'template':template})
         results += f"\n## {Information}\n"
         results += response.content
+        break
 
     
     

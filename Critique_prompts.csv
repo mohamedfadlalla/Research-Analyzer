@@ -1,4 +1,69 @@
 Name of the Critique,Method of Criticism,Output Template
- **Clarity and Reproducibility**, 1. Read through the method section. <br> 2. Identify key procedures. <br> 3. Check for detail. <br> 4. List materials and equipment. <br> 5. Evaluate order and logic. <br> 6. Look for ambiguities. <br> 7. Compare with standards. , **Overall Evaluation**: [Summary] <br> **Detailed Findings**: <br> - **Procedure Descriptions**: [Comments] <br> - **Materials and Equipment**: [Observations] <br> - **Step-by-Step Protocols**: [Evaluation] <br> - **Ambiguities Identified**: [List] 
- **Appropriateness and Justification**, 1. Identify research questions. <br> 2. Match methods to questions. <br> 3. Review justifications. <br> 4. Assess method suitability. <br> 5. Compare alternatives. <br> 6. Check references. <br> 7. Evaluate novel methods. , **Overall Evaluation**: [Summary] <br> **Detailed Findings**: <br> - **Relevance to Research Questions**: [Assessment] <br> - **Justifications Provided**: [Comments] <br> - **Suitability of Methods**: [Evaluation] <br> - **Alternative Methods**: [Consideration] <br> - **Validation of Novel Methods**: [Assessment] 
- **Bias and Limitations**       , 1. Identify control groups. <br> 2. Evaluate variable handling. <br> 3. Spot potential biases. <br> 4. Identify confounding factors. <br> 5. Review limitations acknowledged. <br> 6. Check for mitigation strategies. <br> 7. Consider impact on results. , **Overall Evaluation**: [Summary] <br> **Detailed Findings**: <br> - **Control Groups**: [Evaluation] <br> - **Variable Handling**: [Comments] <br> - **Potential Biases**: [Identification] <br> - **Confounding Factors**: [Identification] <br> - **Acknowledgment of Limitations**: [Observations] <br> - **Mitigation Strategies**: [Assessment] 
+ **Clarity and Reproducibility**,"### 1. Clarity and Reproducibility
+**What to Look For:**
+- Detailed descriptions of procedures
+- Specifics about materials and equipment
+- Step-by-step protocols
+- Clear instructions on how to perform experiments or analyses
+
+**Step-by-Step Critique Process:**
+1. **Read Through the Method Section**: Read the entire method section to get a general understanding of the procedures.
+2. **Identify Key Procedures**: Note down the main steps or stages of the methodology.
+3. **Check for Detail**: Ensure each procedure is described in enough detail. Ask if you could replicate the experiment exactly as described.
+4. **List Materials and Equipment**: Confirm that all necessary materials and equipment are listed, including specific brands or models if relevant.
+5. **Evaluate the Order and Logic**: Ensure the steps are presented in a logical order that follows the experimental timeline.
+6. **Look for Ambiguities**: Identify any ambiguous terms or vague descriptions that could lead to confusion or variability in replication.
+7. **Compare with Standards**: Compare the descriptions with standard practices or protocols in the field to see if they meet expected norms.","### Critique of the Method Section
+
+**1. Clarity and Reproducibility**
+- **Overall Evaluation**: [Brief summary of the clarity and reproducibility]
+- **Detailed Findings**:
+  - **Procedure Descriptions**: [Specific comments on the level of detail]
+  - **Materials and Equipment**: [Observations on the completeness of the materials list]
+  - **Step-by-Step Protocols**: [Evaluation of the logical order and clarity]
+  - **Ambiguities Identified**: [List any ambiguous terms or vague descriptions]"
+ **Appropriateness and Justification**,"### 2. Appropriateness and Justification
+**What to Look For:**
+- Relevance of methods to research questions or hypotheses
+- Justifications for the choice of methods
+- References to established protocols or previous studies
+- Suitability of the methods for the type of data collected
+
+**Step-by-Step Critique Process:**
+1. **Identify Research Questions**: Clearly identify the research questions or hypotheses stated in the paper.
+2. **Match Methods to Questions**: Determine if the methods used are appropriate for answering these questions or testing these hypotheses.
+3. **Review Justifications**: Look for explanations as to why these particular methods were chosen. Check if the authors have referenced other studies or standard protocols.
+4. **Assess Method Suitability**: Evaluate if the methods are suitable for the type of data being collected (e.g., qualitative vs. quantitative).
+5. **Compare Alternatives**: Consider if there are alternative methods that might be more appropriate or if the chosen methods have known limitations.
+6. **Check References**: Verify that the cited references for the methods are appropriate and relevant to the current study.
+7. **Evaluate Novel Methods**: If novel methods are used, assess whether they are adequately validated and justified.","**2. Appropriateness and Justification**
+- **Overall Evaluation**: [Brief summary of the appropriateness and justification]
+- **Detailed Findings**:
+  - **Relevance to Research Questions**: [Assessment of the methods' suitability]
+  - **Justifications Provided**: [Comments on the adequacy of justifications and references]
+  - **Suitability of Methods**: [Evaluation of the methods' suitability for the data type]
+  - **Alternative Methods**: [Consideration of any potentially more suitable methods]
+  - **Validation of Novel Methods**: [Assessment of the validation and justification of any novel methods]"
+ **Bias and Limitations**       ,"### 3. Bias and Limitations
+**What to Look For:**
+- Potential sources of bias
+- Handling of control groups and variables
+- Confounding factors and how they are addressed
+- Acknowledgment of methodological limitations
+
+**Step-by-Step Critique Process:**
+1. **Identify Control Groups**: Determine if appropriate control groups are included and described.
+2. **Evaluate Variable Handling**: Check how variables are defined, measured, and controlled. Ensure key variables are accounted for and properly managed.
+3. **Spot Potential Biases**: Look for any sources of bias, such as selection bias, measurement bias, or procedural bias.
+4. **Identify Confounding Factors**: Determine if there are any potential confounding factors that could impact the results and check how they are addressed.
+5. **Review Limitations Acknowledged**: See if the authors have acknowledged any limitations of their methodology.
+6. **Check for Mitigation Strategies**: Assess if the authors have implemented strategies to mitigate biases and limitations.
+7. **Consider Impact on Results**: Think about how the identified biases and limitations might affect the study’s conclusions or reliability.","**3. Bias and Limitations**
+- **Overall Evaluation**: [Brief summary of biases and limitations]
+- **Detailed Findings**:
+  - **Control Groups**: [Evaluation of the use and description of control groups]
+  - **Variable Handling**: [Comments on the management of variables]
+  - **Potential Biases**: [Identification and assessment of biases]
+  - **Confounding Factors**: [Identification and assessment of confounding factors]
+  - **Acknowledgment of Limitations**: [Observations on the acknowledgment and handling of limitations]
+  - **Mitigation Strategies**: [Assessment of strategies implemented to mitigate biases and limitations]"
